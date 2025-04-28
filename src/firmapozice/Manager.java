@@ -1,14 +1,20 @@
 package firmapozice;
 
+import java.time.LocalDate;
+
 public class Manager extends Zamestnanec {
     private int pocetRizenychZamestnancu;
-    public Manager(String jmeno, String prijmeni, String pozice, int plat,int pocetRizenychZamestnancu) {
-        super(jmeno, prijmeni, pozice, plat);
+    public Manager(String jmeno, String prijmeni, String pozice, int plat, int pocetRizenychZamestnancu, LocalDate datumNastupu) {
+        super(jmeno, prijmeni, pozice, plat, datumNastupu);
         this.pocetRizenychZamestnancu=pocetRizenychZamestnancu;
     }
     public void vypisInfo(){
-        System.out.println("Jmeno: " + getJmeno() + ", Příjmení: " + getPrijmeni() + ", Pozice: " + getPozice()+ ", Plat: " + getPlat()+", Počet řízených zaměstnanců: "+ pocetRizenychZamestnancu);
+        super.vypisInfo();
+        System.out.println("Počet řízených zaměstnanců: "+ pocetRizenychZamestnancu);
     }
-
+    public void priradZamestnance(){
+        pocetRizenychZamestnancu++;
+        System.out.println(pocetRizenychZamestnancu);
+    }
 
 }
